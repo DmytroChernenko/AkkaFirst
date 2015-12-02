@@ -11,15 +11,7 @@ public class CreateStringsInFile {
         File file = new File("data.txt");
         BufferedWriter writer = new BufferedWriter(new FileWriter(file));
 
-        int n = 0;
-
-//        for (int i = 0; i < 10; i++) {
-//            writer.write("Hello");
-//            writer.newLine();
-//        }
-
-
-        for (int j = 1; j <= 100_000; j++) {
+        for (int j = 0; j < 100_000; j++) {
 
             int id = (int) (Math.random() * 1000);
             int amt = (int) (Math.random() * 1000);
@@ -27,12 +19,8 @@ public class CreateStringsInFile {
             String result = id + ";" + amt;
             writer.write(result);
             writer.newLine();
-
-            n++;
-
         }
 
         writer.close();
-
     }
 }

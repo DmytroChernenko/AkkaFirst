@@ -15,14 +15,17 @@ public class ReadFile {
 
         long start = System.currentTimeMillis();
 
+
         while (reader.ready()) {
             String s = reader.readLine();
             String[] ar = s.split(";");
             int id = Integer.parseInt(ar[0]);
             int amt = Integer.parseInt(ar[1]);
+
             int prevAmt = 0;
             if (map.containsKey(id))
                 prevAmt = map.get(id);
+
             map.put(id, prevAmt + amt);
         }
         reader.close();
