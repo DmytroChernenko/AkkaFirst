@@ -19,16 +19,15 @@ public class MapWorker extends UntypedActor {
 
     private Map<Integer, Integer> generalMap = new HashMap<>();
     private int recievedMesagesMap = 0;
-    private int needToProcess = -1;
+    private int needToProcess;
 
     @Override
     public void onReceive(Object message) throws Exception {
         if (message instanceof MapWork) {
+            recievedMesagesMap++;
             Map map = (Map) ((MapWork) message).getMap();
             processMap(map);
-            recievedMesagesMap++;
             if (needToProcess == recievedMesagesMap) {
-                System.out.println("write");
                 writeResult(generalMap);
                 getContext().system().shutdown();
             }

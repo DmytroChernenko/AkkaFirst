@@ -9,6 +9,6 @@ import scala.concurrent.duration.Duration;
  */
 public class Main {
     public static void main(String[] args) {
-        new AkkaWay().run(args[0]);
+        new AkkaSolution().run(args[0]);
     }
 }
