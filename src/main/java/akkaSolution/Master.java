@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class Master extends UntypedActor {
 
     private String filename;
+
     private ActorRef workerRouter;
     private ActorRef mapWorker;
 
